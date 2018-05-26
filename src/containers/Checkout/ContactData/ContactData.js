@@ -67,9 +67,15 @@ class ContactData extends Component {
         event.preventDefault();//because form sends a request to reload page, something we do not want
         this.setState({ loading: true });
 
+        const formData = {};
+        for (let formElementIdentifier in this.state.orderForm) {
+            formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
+        }
+
         const order = {
             ingredients: this.props.ingredients,
             price: this.props.price,
+            orderData: formData
         }
         axios.post('/orders.json', order)//firebase needs .json to work
             .then(response => {
@@ -103,7 +109,7 @@ class ContactData extends Component {
             });
         }
         let form = (
-            <form>
+            <form onSubmit={this.orderHandler}>
                 {formElementsArray.map(formElement => (
                     <Input
                         key={formElement.id}
