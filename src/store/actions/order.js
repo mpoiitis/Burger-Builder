@@ -19,10 +19,10 @@ export const purchaseBurgerFail = (error) => {
 export const purchaseBurger = (orderData) => {
     return dispatch => {
         dispatch(purchaseBurgerStart());
-        
+
         axios.post('/orders.json', orderData)//firebase needs .json to work
         .then(response => {
-            dispatch(purchaseBurgerSuccess(response.data, orderData));
+            dispatch(purchaseBurgerSuccess(response.data.name, orderData));
         })
         .catch(error => {
             dispatch(purchaseBurgerFail(error));
