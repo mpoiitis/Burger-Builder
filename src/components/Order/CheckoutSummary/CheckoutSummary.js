@@ -18,6 +18,6 @@ const checkoutSummary = (props) => {
                 clicked={props.checkoutContinued}>CONTINUE</Button>
         </div>
     );
-}
+};
 
 export default checkoutSummary;

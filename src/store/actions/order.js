@@ -16,11 +16,11 @@ export const purchaseBurgerFail = (error) => {
     };
 };
 
-export const purchaseBurger = (orderData) => {
+export const purchaseBurger = (orderData, token) => {
     return dispatch => {
         dispatch(purchaseBurgerStart());
 
-        axios.post('/orders.json', orderData)//firebase needs .json to work
+        axios.post('/orders.json?auth=' + token, orderData)//firebase needs .json to work
         .then(response => {
             dispatch(purchaseBurgerSuccess(response.data.name, orderData));
         })
