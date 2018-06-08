@@ -16,3 +16,5 @@ To run:
 ![alt text](https://github.com/mpoiitis/Burger-Builder/blob/master/images/burger_builder_5.png)
 
 ![alt text](https://github.com/mpoiitis/Burger-Builder/blob/master/images/burger_builder_6.png)
+
+![alt text](https://github.com/mpoiitis/Burger-Builder/blob/master/images/burger_builder_7.png)
